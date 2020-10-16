@@ -20,8 +20,20 @@ module.exports = {
         typeName: 'Documentation', // Required
         baseDir: './content/docs', // Where .md files are located
         pathPrefix: '/docs', // Add route prefix. Optional
-        template: './src/templates/Documentation.vue' // Optional
+        template: './src/templates/Documentation.vue', // Optional
+        refs:{
+          tags:"Tag"
+        }
       }
-    }
+    },
+    {
+      use: '@gridsome/vue-remark',
+      options: {
+        typeName: 'Tag', // Required
+        baseDir: './tags', // Where .md files are located
+        pathPrefix: '/tags', // Add route prefix. Optional
+        template: './src/templates/Tag.vue' // Optional
+      }
+    },
   ]
 }

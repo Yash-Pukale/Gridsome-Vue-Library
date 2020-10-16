@@ -1,6 +1,13 @@
 <template>
   <Layout>
     <h1>{{ $page.documentation.title }}</h1>
+    <h5>
+      Tags:
+    <span :style="`padding:5px; margin-right:5px;background-color:${tag.color}`"
+     v-for="tag in $page.documentation.tags" :key="tag.id">
+     <g-link :to="tag.path" style="color:white">{{tag.id}}</g-link>
+     </span>
+    </h5>
     <p class="intro">{{ $page.documentation.excerpt }}</p>
     <VueRemarkContent>
         <template v-slot:ad>
@@ -17,6 +24,11 @@ query Documentation ($id: ID!) {
     title
     excerpt
     path
+    tags {
+      id
+      color
+      path
+    }
   }
 }
 </page-query>

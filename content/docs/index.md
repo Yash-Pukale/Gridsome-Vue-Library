@@ -6,6 +6,7 @@ layout:
     component : ~/layouts/focus.vue
     props :
         color : red
+tags: [vue, tutorial]
 
 ---
 

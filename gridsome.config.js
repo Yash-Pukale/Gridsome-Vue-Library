@@ -21,6 +21,8 @@ module.exports = {
         baseDir: './content/docs', // Where .md files are located
         pathPrefix: '/docs', // Add route prefix. Optional
         template: './src/templates/Documentation.vue', // Optional
+        includePaths: ['./src/sections'],
+        route:'/blog/:id',
         refs:{
           tags:"Tag"
         }
